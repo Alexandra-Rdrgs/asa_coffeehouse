@@ -1,3 +1,9 @@
 export default function Footer() {
-  return;
+
+  return (
+    <footer>
+       <dv>
+    </footer>
+  )
+
 }
