@@ -32,24 +32,42 @@ export default function Header() {
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="/illustration">menu</Link>
+            <Link to="/menu">menu</Link>
           </li>
           <li>
-            <Link to="/linocut">about</Link>
+            <Link to="/about">about</Link>
           </li>
           <li>
-            <Link to="/street-art">shop</Link>
+            <Link to="/shop">shop</Link>
           </li>
           <li>
-            <Link to="/street-art">contact</Link>
+            <Link to="/contact">contact</Link>
           </li>
           <li>
-            <Link to="/street-art">cart</Link>
+            <Link to="/cart">cart</Link>
           </li>
-          {currentUser && (
+          {!currentUser ? (
+            <li>
+              <Link to="/signin">sign in</Link>
+            </li>
+          ) : (
             <>
               <li>
-                <Link to="/dashboard">account</Link>
+                <Link to="/myaccount">My accound</Link>
+                <ul>
+                  <li>
+                    <Link to="/myaccount/fidelity">Fidelity program</Link>
+                  </li>
+                  <li>
+                    <Link to="/myaccount/orders">Orders</Link>
+                  </li>
+                  <li>
+                    <Link to="/myaccount/personal">My informations</Link>
+                  </li>
+                  <li>
+                    <Link to="/myaccount/settings">Settings</Link>
+                  </li>
+                </ul>
               </li>
               <li>
                 <button onClick={logOut}>
