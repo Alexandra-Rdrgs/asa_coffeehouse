@@ -32,10 +32,10 @@ export default function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/myaccount" element={<Account />}>
-          <Route path="/fidelity" element={<Fidelity />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/personal" element={<Informations />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="fidelity" element={<Fidelity />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="personal" element={<Informations />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
