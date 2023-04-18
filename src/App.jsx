@@ -12,6 +12,11 @@ import Cart from "./pages/Cart";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Account from "./pages/Account";
+import Fidelity from "./pages/Fidelity";
+import Orders from "./pages/Orders";
+import Informations from "./pages/Informations";
+import Settings from "./pages/Settings";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -26,7 +31,13 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/myaccount" element={<Account />}>
+          <Route path="/fidelity" element={<Fidelity />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/personal" element={<Informations />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
