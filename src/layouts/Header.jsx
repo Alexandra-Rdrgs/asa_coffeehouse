@@ -67,16 +67,16 @@ export default function Header() {
                   <li>
                     <Link to="/myaccount/settings">Settings</Link>
                   </li>
+                  <li>
+                    <button onClick={logOut}>
+                      <img
+                        src="/src/assets/icons/logout.svg"
+                        alt=""
+                        width={"24px"}
+                      />
+                    </button>
+                  </li>
                 </ul>
-              </li>
-              <li>
-                <button onClick={logOut}>
-                  <img
-                    src="/src/assets/icons/logout.svg"
-                    alt=""
-                    width={"24px"}
-                  />
-                </button>
               </li>
             </>
           )}
