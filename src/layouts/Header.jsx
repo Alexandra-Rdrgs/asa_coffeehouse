@@ -10,7 +10,7 @@ export default function Header() {
   const logOut = async () => {
     try {
       await signOut(auth);
-      navigate("/admin");
+      navigate("/");
     } catch (error) {
       alet(
         error +
@@ -21,21 +21,19 @@ export default function Header() {
 
   return (
     <header className="header">
-      <a href="/" className="logo"></a>
-      <input className="side-menu" type="checkbox" id="side-menu" />
-      <label className="hamb" htmlFor="side-menu">
-        <span className="hamb-line"></span>
-      </label>
       <nav className="nav">
+        <Link to="/">
+          <img src="/src/assets/logo.svg" alt="" width={"100px"} />
+        </Link>
         <ul className="menu">
           <li>
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="/menu">menu</Link>
+            <Link to="/about">about</Link>
           </li>
           <li>
-            <Link to="/about">about</Link>
+            <Link to="/menu">menu</Link>
           </li>
           <li>
             <Link to="/shop">shop</Link>
@@ -43,6 +41,8 @@ export default function Header() {
           <li>
             <Link to="/contact">contact</Link>
           </li>
+        </ul>
+        <ul className="menu">
           <li>
             <Link to="/cart">cart</Link>
           </li>
@@ -54,7 +54,7 @@ export default function Header() {
             <>
               <li>
                 <Link to="/myaccount">My accound</Link>
-                <ul>
+                <ul className="menu_subcat">
                   <li>
                     <Link to="/myaccount/fidelity">Fidelity program</Link>
                   </li>

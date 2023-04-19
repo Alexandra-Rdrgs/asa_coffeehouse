@@ -1,0 +1,32 @@
+main#aboutus {
+  padding: 90px 90px 0px 90px;
+  section.aboutus_block {
+    display: flex;
+    flex-direction: row nowrap;
+    margin-bottom: 90px;
+    div {
+      &.aboutus_text {
+        margin-right: 60px;
+      }
+      &.aboutus_illu {
+      }
+    }
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      div {
+        &.aboutus_text {
+          margin-left: 60px;
+          margin-right: 0px;
+        }
+        &.aboutus_illu {
+        }
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+  h3 {
+    margin: 0 0 30px 0;
+  }
+}

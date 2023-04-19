@@ -1,0 +1,12 @@
+// FOR HEADINGS
+@mixin heading-highlight($color, $width: 350px, $height: 20px) {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  top: 20px;
+  left: 0px;
+  background-color: $color;
+}

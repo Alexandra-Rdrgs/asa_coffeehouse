@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Auth() {
   const { signIn } = useContext(UserContext);
@@ -31,9 +31,9 @@ export default function Auth() {
 
   return (
     <main id="auth">
-      <section>
+      <section className="form_block">
         <div>
-          <h1>Hey, it's good to see you.</h1>
+          <h1>Hey, it's good to see you again.</h1>
         </div>
         <form className="" onSubmit={handleSubmit} ref={formRef}>
           <div>
@@ -61,6 +61,13 @@ export default function Auth() {
           </div>
           <button type="submit">Sign in</button>
         </form>
+        <p>You've forgot your password ?</p>
+        <p>
+          You are new here ? <Link to="/signup">Sign up.</Link>
+        </p>
+      </section>
+      <section className="illu_block">
+        <div></div>
       </section>
     </main>
   );

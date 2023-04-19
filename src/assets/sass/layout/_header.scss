@@ -1,0 +1,53 @@
+header.header {
+  nav.nav {
+    ul.menu {
+      li {
+        a {
+        }
+      }
+    }
+    ul:nth-child(2) {
+      li {
+        a {
+        }
+        ul.menu_subcat {
+          li {
+            a {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  header.header {
+    height: 60px;
+
+    nav.nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 90px;
+      width: 100%;
+      height: 100%;
+      ul.menu {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        column-gap: 30px;
+        li {
+          a {
+            ul.menu_subcat {
+              li {
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
