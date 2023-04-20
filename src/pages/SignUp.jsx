@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { db } from "/firebase-config";
@@ -6,9 +6,10 @@ import { addDoc, collection } from "firebase/firestore";
 
 export default function SignUp() {
   const [validation, setValidation] = useState("");
-
-  const { signUp } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const { currentUser } = useContext(UserContext);
+  const { signUp } = useContext(UserContext);
 
   const databaseRef = collection(db, "users");
 
@@ -61,6 +62,11 @@ export default function SignUp() {
       }
     }
   };
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/myaccount");
+    }
+  }, [currentUser, navigate]);
 
   return (
     <main>

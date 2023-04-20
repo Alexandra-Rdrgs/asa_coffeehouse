@@ -1,11 +1,13 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Auth() {
-  const { signIn } = useContext(UserContext);
-  const navigate = useNavigate();
   const [validation, setValidation] = useState("");
+  const navigate = useNavigate();
+
+  const { currentUser } = useContext(UserContext);
+  const { signIn } = useContext(UserContext);
 
   const inputs = useRef([]);
   const addInputs = (element) => {
@@ -28,6 +30,12 @@ export default function Auth() {
       setValidation("Oops, email and/or password incorrect.");
     }
   };
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/myaccount");
+    }
+  }, [currentUser, navigate]);
 
   return (
     <main id="auth">
