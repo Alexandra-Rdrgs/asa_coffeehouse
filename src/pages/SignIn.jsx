@@ -23,7 +23,7 @@ export default function Auth() {
         inputs.current[1].value
       );
       setValidation("");
-      navigate("/dashboard");
+      navigate("/myaccount");
     } catch {
       setValidation("Oops, email and/or password incorrect.");
     }

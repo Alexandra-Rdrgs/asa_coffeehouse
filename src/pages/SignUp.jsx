@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { db } from "/firebase-config";
 import { addDoc, collection } from "firebase/firestore";
@@ -8,6 +8,7 @@ export default function SignUp() {
   const [validation, setValidation] = useState("");
 
   const { signUp } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const databaseRef = collection(db, "users");
 
@@ -50,6 +51,7 @@ export default function SignUp() {
       });
       formRef.current.reset();
       setValidation("");
+      navigate("/myaccount");
     } catch (error) {
       if (error.code === "auth/invalid-email") {
         setValidation("Email format is invalid.");
