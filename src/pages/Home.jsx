@@ -1,24 +1,42 @@
 import { Link } from "react-router-dom";
-import WhiteForm from "../assets/images/blob.svg";
+//
+
+import ShapeHome from "../assets/images/shapes/shape_01.svg";
+import Shape from "../assets/images/shapes/shape_05.svg";
+import ShapeAbout from "../assets/images/shapes/shape_07.svg";
+import CoffeeBeans from "../assets/images/icons/coffee_beans.svg";
+import ImageHome from "../assets/images/image_home.jpg";
+import HotBeverage from "../assets/images/icons/hot_beverage.svg";
+import ColdBeverage from "../assets/images/icons/cold_beverage.svg";
+import Savoury from "../assets/images/icons/savoury.svg";
+import Sweet from "../assets/images/icons/sweet.svg";
+//
 export default function Home() {
   return (
     <main id="home">
-      <section id="home_container">
-        <div>
-          <h1>Welcome to asa coffeehouse; there's no bad morning with us.</h1>
+      <section id="home">
+        <img src={CoffeeBeans} alt="" className="coffee_beans" />
+        <div className="text_block">
+          <img className="logo"></img>
+          <h1>Welcome to asa coffeehouse</h1>
+          <h2>there's no bad days with us.</h2>
           <p>
-            Here at asa coffeehouse, we take the time to Lorem, ipsum dolor sit
-            amet consectetur adipisicing elit. Dolore inventore cupiditate
-            dolorum velit quas recusandae doloremque dolorem, dolores sequi
-            provident quisquam molestiae vitae at repellendus ipsam vel
-            temporibus corporis earum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+            harum odit saepe impedit, debitis animi rem dolorem, odio,
+            distinctio repellat temporibus ipsa sapiente illum quis facilis amet
+            ipsum officiis eum. Eum fugiat quae vel sequi exercitationem,
+            dolorem harum dicta rem aliquid nihil, alias velit. Illum,
+            repellendus nesciunt, earum quibusdam error voluptas dolorum a
+            blanditiis corrupti rerum amet distinctio numquam qui.
           </p>
         </div>
-        <div className="color_block"></div>
-        <img src="https://picsum.photos/400" />
+        <div className="illu_block">
+          <img src={ShapeHome} alt="" className="shape" />
+          <img src={ImageHome} className="picture" />
+        </div>
       </section>
-      <section id="menu_container">
-        <div className="menu_intro">
+      <section id="menu">
+        <div className="text_block">
           <h2>Our menu.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea alias
@@ -31,62 +49,55 @@ export default function Home() {
         <div className="menu_categories">
           <div className="category">
             <div className="icon_block">
-              <img src={WhiteForm} />
-              <img src="https://picsum.photos/50/50" />
+              <img src={Shape} className="shape" />
+              <img src={HotBeverage} className="icon" />
             </div>
-
-            <h4>coffee</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Repellat, libero ducimus. Maiores!
-            </p>
+            <h4>Hot beverages</h4>
+            <p>Lorem ipsum dolor, sit amet !</p>
+            <Link to="/menu">Discover</Link>
           </div>
           <div className="category">
             <div className="icon_block">
-              <img src={WhiteForm} />
-              <img src="https://picsum.photos/50/50" />
+              <img src={Shape} className="shape" />
+              <img src={ColdBeverage} className="icon" />
             </div>
-            <h4>tea</h4>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque
-              blanditiis optio maiores.
-            </p>
+            <h4>Cold bevergaes</h4>
+            <p>Lorem ipsum, dolor sit amet.</p>
+            <Link to="/menu">Discover</Link>
           </div>
           <div className="category">
             <div className="icon_block">
-              <img src={WhiteForm} />
-              <img src="https://picsum.photos/50/50" />
+              <img src={Shape} className="shape" />
+              <img src={Savoury} className="icon" />
             </div>
-            <h4>sweet tooth</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Incidunt, fugit maxime. Quaerat.
-            </p>
+            <h4>Savoury</h4>
+            <p>Lorem ipsum dolor, sit amet.</p>
+            <Link to="/menu">Discover</Link>
           </div>
           <div className="category">
             <div className="icon_block">
-              <img src={WhiteForm} />
-              <img src="https://picsum.photos/50/50" />
+              <img src={Shape} className="shape" />
+              <img src={Sweet} className="icon" />
             </div>
-            <h4>salty</h4>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Incidunt, fugit maxime. Quaerat.
-            </p>
+            <h4>Sweet</h4>
+            <p>Lorem ipsum dolor, sit amet!</p>
+            <Link to="/menu">Discover</Link>
           </div>
         </div>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto dicta
-          omnis ullam!
-        </p>
-        <Link to="/menu">view full menu</Link>
+        <div className="see_all">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+            dicta omnis ullam!
+          </p>
+          <Link to="/menu">view full menu</Link>
+        </div>
       </section>
-      <section id="about_container">
-        <div className="image_block">
-          <div className="color_block"></div>
-          <img src="https://picsum.photos/300/400" />
+      <section id="about">
+        <div className="illu_block">
+          <img src={ShapeAbout} alt="" className="shape" />
+          <img src={ImageHome} className="picture" />
         </div>
-        <div className="about_intro">
+        <div className="text_block">
           <h2>Let's know each other !</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat,
@@ -95,11 +106,11 @@ export default function Home() {
             nulla. Illum culpa deleniti dignissimos sed iusto molestiae
             deserunt.
           </p>
-          <a href=""></a>
+          <Link to="/about">Learn more about us.</Link>
         </div>
       </section>
-      <section id="shop_container">
-        <div className="shop_intro">
+      <section id="shop">
+        <div className="text_block">
           <h2>Our most popular products.</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
@@ -110,35 +121,38 @@ export default function Home() {
             blanditiis tenetur cupiditate nobis quae accusantium.
           </p>
         </div>
-        <div className="shop_products">
+        <div className="products_list">
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
           <div className="product">
-            <img src="https://picsum.photos/200/300" />
+            <img src="https://picsum.photos/200/300" className="picture" />
             <Link to="/shop">view product</Link>
           </div>
         </div>
-        <Link to="/shop">view all products</Link>
+        <div className="see_all">
+          <Link to="/shop">view all products</Link>
+        </div>
+        <div className="color_block"></div>
       </section>
-      <section id="contact_container"></section>
+      <section id="contact"></section>
     </main>
   );
 }
