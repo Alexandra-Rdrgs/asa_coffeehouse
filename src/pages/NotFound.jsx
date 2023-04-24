@@ -1,7 +1,10 @@
 export default function NotFound() {
   return (
-    <div>
-      <h1>404 Not Found</h1>
-    </div>
+    <main>
+      <img src="" alt="" />
+      <h1>Page not found</h1>
+      <p>The page you were looking for doesn't seems to exist.</p>
+      Want to go back <a href="/">home</a>?
+    </main>
   );
 }
