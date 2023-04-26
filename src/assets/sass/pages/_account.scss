@@ -1,0 +1,16 @@
+main#account {
+  padding: 90px 90px 0px 90px;
+  display: flex;
+  flex-direction: row nowrap;
+  column-gap: 60px;
+  nav {
+    ul {
+      li {
+        a {
+        }
+      }
+    }
+  }
+  section.nested {
+  }
+}

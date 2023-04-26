@@ -31,9 +31,28 @@ export default function Account() {
   }, [currentUser]);
 
   return (
-    <div>
-      <h1>Hello {userFirstName}!</h1>
-      <Outlet />
-    </div>
+    <main id="account">
+      <nav>
+        <h1>Hi {userFirstName}!</h1>
+        <ul>
+          <li>
+            <a href="/myaccount/orders">Orders</a>
+          </li>
+          <li>
+            <a href="/myaccount/fidelity">Fidelity</a>
+          </li>
+          <li>
+            <a href="/myaccount/details">Personnal Data</a>
+          </li>
+          <li>
+            <a href="/myaccount/settings">Settings</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section className="nested">
+        <Outlet />
+      </section>
+    </main>
   );
 }

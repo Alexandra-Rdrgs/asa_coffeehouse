@@ -40,7 +40,7 @@ export default function App() {
           <Route path="/myaccount" element={<Account />}>
             <Route path="fidelity" element={<Fidelity />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="personal" element={<Informations />} />
+            <Route path="details" element={<Informations />} />
             <Route path="settings" element={<Settings />} />
           </Route>
         )}
