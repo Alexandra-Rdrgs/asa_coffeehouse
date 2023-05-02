@@ -42,7 +42,7 @@ export default function Menu() {
     <main id="menu">
       <h1>Menu</h1>
       <section className="newbbies">
-        <h2>Newbbies</h2>
+        <h2>What's new ?</h2>
         <div className="newbbies_items">
           {seasonalProducts.map((item) => (
             <div className="item" key={item.id}>
