@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export default function Menu() {
   const [menu, setMenu] = useState([]);
+  const [seasonalProducts, setSeasonalProducts] = useState([]);
   const menuRef = collection(db, "menu");
+  const seasonalProductsRef = collection(db, "seasonal_products");
+  const q = query(seasonalProductsRef, where("isActive", "==", true));
 
   useEffect(() => {
     const getMenu = async () => {
@@ -19,15 +22,40 @@ export default function Menu() {
         console.dir(error);
       }
     };
+    const getSeasonalProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(q);
+        const seasonalProductsData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setSeasonalProducts(seasonalProductsData);
+      } catch (error) {
+        console.dir(error);
+      }
+    };
     getMenu();
+    getSeasonalProducts();
   }, []);
-
-  console.log(menu);
 
   return (
     <main id="menu">
       <h1>Menu</h1>
-      <section className="newbbies"></section>
+      <section className="newbbies">
+        <h2>Newbbies</h2>
+        <div className="newbbies_items">
+          {seasonalProducts.map((item) => (
+            <div className="item" key={item.id}>
+              <img src={item.image} alt={item.name} />
+              <div className="item_description">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p className="price">{item.price} €</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className="menu">
         {menu.filter((item) => item.category === "hot beverage").length > 0 && (
           <div className="category">
