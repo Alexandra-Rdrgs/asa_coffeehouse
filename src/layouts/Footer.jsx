@@ -1,7 +1,45 @@
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import * as L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
 export default function Footer() {
+  const LeafIcon = L.Icon.extend({
+    options: {},
+  });
+  const iconPersonnalized = new LeafIcon({
+    iconUrl: "../assets/images/icons/pin.svg",
+    iconSize: [50, 50],
+    iconAnchor: [16, 37],
+  });
+
+  const position = [51.505, -0.09];
+
   return (
     <footer>
       <div className="footer_container">
+        <div className="card">
+          <MapContainer
+            className="asa_map"
+            center={[48.9518169, 4.3130069]}
+            zoom={12}
+            scrollWheelZoom={false}
+            style={{
+              height: "200px",
+              width: "500px",
+            }}
+            maxZoom={13}
+          >
+            <TileLayer
+              attribution="OpenStreetMap"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={position} icon={iconPersonnalized}>
+              <Popup>
+                We are here ☺︎ <br /> Come and visit us !
+              </Popup>
+            </Marker>
+          </MapContainer>
+        </div>
         <div className="container">
           <div className="subcat">
             <img src="https://picsum.photos/100/100" alt="" width={"100px"} />
@@ -13,9 +51,9 @@ export default function Footer() {
           </div>
           <div className="subcat">
             <h4>Adress</h4>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
-            <p>Lorem ipsum dolor sit.</p>
+            <p>25, Not Here Street</p>
+            <p>Nowhere Land</p>
+            <p>Planet Earth</p>
           </div>
           <div className="subcat">
             <h4>Contact</h4>
