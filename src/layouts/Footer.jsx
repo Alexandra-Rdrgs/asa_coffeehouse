@@ -7,38 +7,40 @@ export default function Footer() {
     options: {},
   });
   const iconPersonnalized = new LeafIcon({
-    iconUrl: "../assets/images/icons/pin.svg",
+    iconUrl: "src/assets/images/icons/pin.svg",
     iconSize: [50, 50],
     iconAnchor: [16, 37],
   });
 
-  const position = [51.505, -0.09];
+  const position = [48.95, 4.3];
 
   return (
     <footer>
       <div className="footer_container">
-        <div className="card">
-          <MapContainer
-            className="asa_map"
-            center={[48.9518169, 4.3130069]}
-            zoom={12}
-            scrollWheelZoom={false}
-            style={{
-              height: "200px",
-              width: "500px",
-            }}
-            maxZoom={13}
-          >
-            <TileLayer
-              attribution="OpenStreetMap"
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position} icon={iconPersonnalized}>
-              <Popup>
-                We are here ☺︎ <br /> Come and visit us !
-              </Popup>
-            </Marker>
-          </MapContainer>
+        <div className="container">
+          <div className="card">
+            <MapContainer
+              className="asa_map"
+              center={[48.95, 4.3]}
+              zoom={12}
+              scrollWheelZoom={false}
+              style={{
+                height: "200px",
+                width: "500px",
+              }}
+              maxZoom={13}
+            >
+              <TileLayer
+                attribution="OpenStreetMap"
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={position} icon={iconPersonnalized}>
+                <Popup>
+                  We are here ☺︎ <br /> Come and visit us !
+                </Popup>
+              </Marker>
+            </MapContainer>
+          </div>
         </div>
         <div className="container">
           <div className="subcat">
@@ -61,25 +63,19 @@ export default function Footer() {
             <p>Info@info.com</p>
             <p>Apply@apply.com</p>
           </div>
-          <div className="subcat">
+          <div className="subcat" id="social">
             <h4>Social</h4>
             <a href="https://facebook.com">
-              <p>
-                <img src="/src/assets/icons/facebook.svg" alt="" />
-                Facebook
-              </p>
+              <img src="src/assets/images/icons/facebook.svg" alt="" />
+              <p>Facebook</p>
             </a>
             <a href="https://instagram.com">
-              <p>
-                <img src="/src/assets/icons/instagram.svg" alt="" />
-                Instagram
-              </p>
+              <img src="src/assets/images/icons/instagram.svg" alt="" />
+              <p>Instagram</p>
             </a>
             <a href="https://twitter.com">
-              <p>
-                <img src="/src/assets/icons/twitter.svg" alt="" />
-                Twitter
-              </p>
+              <img src="src/assets/images/icons/twitter.svg" alt="" />
+              <p>Twitter</p>
             </a>
           </div>
         </div>

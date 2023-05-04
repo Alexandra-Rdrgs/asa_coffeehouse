@@ -8,6 +8,10 @@ footer {
       padding: 60px 90px 30px 90px;
       div {
         &.container:first-of-type {
+          div.card {
+          }
+        }
+        &.container:nth-child(2) {
           position: relative;
           display: flex;
           flex-flow: row nowrap;
@@ -26,6 +30,21 @@ footer {
                 font-size: small;
               }
             }
+            &#social {
+              a {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                row-gap: 5px;
+                p {
+                }
+                img {
+                  width: 24px;
+                  height: 24px;
+                  margin-right: 7.5px;
+                }
+              }
+            }
           }
           &:after {
             content: "";
@@ -38,7 +57,7 @@ footer {
             background-color: $latte;
           }
         }
-        &.container:nth-child(2) {
+        &.container:nth-child(3) {
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-between;
